@@ -17,6 +17,15 @@ http
         response.write("<h2>About Page!</h2>");
         response.end();
         break;
-    }
-})
-.listen(8080);
+        
+        default:
+            response.writeHead(404, {
+            "Content-Type" : "text/html",
+            });
+			console.log("404 page has been visited!");
+            response.write("<p>404 Page Not Found!</p>");
+            response.end();
+            break;
+        }
+    })
+    .listen(8080);
